@@ -4,6 +4,7 @@ import matplotlib.pyplot as plt
 from typing import List, Union, Optional
 import numpy as np
 import os
+from scipy import stats
 
 
 class VisualizerUtilityToolkit:
