@@ -22,3 +22,31 @@ class CategoricalUtilityToolkit:
             df_encoded[col] = le.fit_transform(df_encoded[col].astype(str))
 
         return df_encoded
+
+    def label_encode(self, columns: list) -> pd.DataFrame:
+
+        df_encoded = self.df.copy()
+        le = LabelEncoder()
+
+        for col in columns:
+            df_encoded[col] = le.fit_transform(df_encoded[col].astype(str))
+
+        return df_encoded
+
+    def one_hot_encode(self, columns: list) -> pd.DataFrame:
+
+        df_encoded = pd.get_dummies(self.df, columns=columns, drop_first=True)
+        return df_encoded
+
+    def handle_rare_categories(self, columns: list, threshold: float = 0.05) -> pd.DataFrame:
+
+        df_processed = self.df.copy()
+
+        for col in columns:
+            freq = df_processed[col].value_counts(normalize=True)
+            rare_labels = freq[freq < threshold].index
+            df_processed[col] = df_processed[col].apply(
+                lambda x: 'Rare' if x in rare_labels else x)
+
+        return df_processed
+
