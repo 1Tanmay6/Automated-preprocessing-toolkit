@@ -50,3 +50,30 @@ class CategoricalUtilityToolkit:
 
         return df_processed
 
+if __name__ == '__main__':
+
+    data = {
+        'city': ['Paris', 'London', 'Berlin', 'Paris', 'Berlin', None, 'London', 'Rome'],
+        'room_type': ['Entire home', 'Private room', 'Shared room', 'Entire home', 'Private room', 'Shared room', 'Entire home', None],
+        'host_is_superhost': ['t', 'f', 't', None, 'f', 't', 'f', 't']
+    }
+    df = pd.DataFrame(data)
+
+    cat_toolkit = CategoricalUtilityToolkit(df)
+
+    df_no_missing = cat_toolkit.handle_missing()
+    print("DataFrame after handling missing values:")
+    print(df_no_missing)
+
+    df_label_encoded = cat_toolkit.label_encode(columns=['city', 'room_type'])
+    print("\nDataFrame after label encoding:")
+    print(df_label_encoded)
+
+    df_one_hot_encoded = cat_toolkit.one_hot_encode(columns=['room_type'])
+    print("\nDataFrame after one-hot encoding:")
+    print(df_one_hot_encoded)
+
+    df_rare_handled = cat_toolkit.handle_rare_categories(
+        columns=['city'], threshold=0.20)
+    print("\nDataFrame after handling rare categories:")
+    print(df_rare_handled)
