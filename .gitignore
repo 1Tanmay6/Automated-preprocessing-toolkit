@@ -1,5 +1,4 @@
 data
 .venv
-plots
 __pycache__
 *.pyc
