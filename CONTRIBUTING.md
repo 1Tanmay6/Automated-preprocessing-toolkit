@@ -1,6 +1,3 @@
-Here’s a `CONTRIBUTING.md` for your project to guide contributors on how they can get involved:
-
-```markdown
 # Contributing to Modular Preprocessing and EDA Toolkit
 
 Thank you for your interest in contributing to this project! We welcome contributions in the form of bug reports, feature requests, code contributions, and documentation improvements. Please follow the guidelines below to ensure a smooth contribution process.
@@ -21,7 +18,7 @@ Thank you for your interest in contributing to this project! We welcome contribu
 1. **Fork the repository** to create your own copy.
 2. **Clone your fork** to your local machine:
    ```bash
-   git clone https://github.com/your-username/Automated-preprocessing-toolkit.git
+   git clone https://github.com/1Tanmay6/Automated-preprocessing-toolkit.git
    ```
 3. **Create a new branch** for your work:
    ```bash
@@ -90,8 +87,3 @@ Improvements to documentation, including examples, explanations, and corrections
 4. Once approved, your code will be merged into the main branch!
 
 Thank you for helping to improve and grow this project. Your contributions are invaluable!
-```
-
----
-
-This `CONTRIBUTING.md` includes sections for different types of contributions, setup instructions, code style guidelines, and submission instructions. Let me know if there are additional details you’d like to include!
